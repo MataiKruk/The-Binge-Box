@@ -1,7 +1,7 @@
+import Header from "../Header/Header";
+
 const Search = () => {
-    return (
-        <h1>SEARCH COMPONENT</h1>
-    )
-}
+  return <Header />;
+};
 
 export default Search;

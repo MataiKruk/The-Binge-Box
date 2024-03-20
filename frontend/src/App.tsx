@@ -2,9 +2,8 @@ import {
   BrowserRouter as Router,
   Navigate,
   Route,
-  Routes
+  Routes,
 } from "react-router-dom";
-import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Browse from "./components/Browse/Browse";
 import Search from "./components/Search/Search";
@@ -14,7 +13,6 @@ function App() {
     <>
       <div className="App">
         <Router>
-          <Header />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/browse" element={<Browse />} />
