@@ -23,5 +23,4 @@ const deletePlaylist = (id: string) => {
     return axios.delete(fullUrl + id);
 };
 
-
 export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist };
