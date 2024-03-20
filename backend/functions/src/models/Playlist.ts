@@ -1,8 +1,9 @@
 import { ObjectId } from "mongodb"
-import Movie from "./Movie"
+import { ShortMovie } from "./Movie"
 
 export default interface Playlist {
     _id?: ObjectId,
+    user?: string,
     playlist_name: string,
-    movies: Movie[]
+    movies: ShortMovie[]
 }
