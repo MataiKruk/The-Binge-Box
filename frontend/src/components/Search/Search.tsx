@@ -9,6 +9,7 @@ const Search = () => {
   const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
   const [searchedMovies, setSearchedMovies] = useState<Movie[]>([]);
   const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [moviesReturned, setMoviesReturned] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const posterUrl = "https://image.tmdb.org/t/p/w200";
 
@@ -16,10 +17,12 @@ const Search = () => {
     if (isSearching) {
       getMoviesBySearch(searchQuery, pageNumb).then((response) => {
         setSearchedMovies(response);
+        setMoviesReturned(response.length > 0);
       });
     } else {
       getPopularMovies(pageNumb).then((response) => {
         setPopularMovies(response);
+        setMoviesReturned(response.length > 0);
       });
     }
   }, [pageNumb, isSearching]);
@@ -65,7 +68,9 @@ const Search = () => {
           {"<"}
         </button>
         <p>Page: {pageNumb}</p>
-        <button onClick={handleNextPage}>{">"}</button>
+        <button onClick={handleNextPage} disabled={!moviesReturned}>
+          {">"}
+        </button>
       </div>
 
       {!isSearching && (
@@ -75,7 +80,13 @@ const Search = () => {
             {popularMovies.map((movie) => (
               <div key={movie.id} className="popularMovie">
                 <NavLink to={`/movie/${movie.id}`}>
-                  <img src={movie.poster_path? posterUrl + movie.poster_path : "/src/images/poster-not-available.jpg"} />
+                  <img
+                    src={
+                      movie.poster_path
+                        ? posterUrl + movie.poster_path
+                        : "/src/images/poster-not-available.jpg"
+                    }
+                  />
                 </NavLink>
                 <p>{movie.title}</p>
               </div>
@@ -100,11 +111,18 @@ const Search = () => {
             {searchedMovies.map((movie) => (
               <div key={movie.id} className="popularMovie">
                 <NavLink to={`/movie/${movie.id}`}>
-                  <img src={movie.poster_path? posterUrl + movie.poster_path : "/src/images/poster-not-available.jpg"} />
+                  <img
+                    src={
+                      movie.poster_path
+                        ? posterUrl + movie.poster_path
+                        : "/src/images/poster-not-available.jpg"
+                    }
+                  />
                 </NavLink>
                 <p>{movie.title}</p>
               </div>
             ))}
+            {!moviesReturned && <p>End of results</p>}
           </div>
         </div>
       )}
