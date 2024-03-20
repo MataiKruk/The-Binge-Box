@@ -2,9 +2,8 @@ import {
   BrowserRouter as Router,
   Navigate,
   Route,
-  Routes
+  Routes,
 } from "react-router-dom";
-import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Search from "./components/Search/Search";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
@@ -14,7 +13,6 @@ function App() {
     <>
       <div className="App">
         <Router>
-          <Header />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/search" element={<Search />} />
