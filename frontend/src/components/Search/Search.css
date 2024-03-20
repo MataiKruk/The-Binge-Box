@@ -1,0 +1,43 @@
+.searchBox {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBox > input {
+    width: 50%;
+    margin-right: 10px;
+}
+
+.popularMoviesContainer, .searchedMoviesContainer {
+    text-align: center;
+}
+
+.movieCoversContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.popularMovie {
+    width: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popularMovie > p {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+}
+
+.pageInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
