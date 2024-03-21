@@ -1,16 +1,22 @@
 import Playlist from "../../models/Playlist";
+import PlaylistMovie from "../PlaylistMovie/PlaylistMovie";
+import "./PlaylistList.css"
 
 interface PlaylistListProps {
     playlists: Playlist[];
-    onUpdate: () => void;
 }
 
 
-function PlaylistList() {
+function PlaylistList({playlists}: PlaylistListProps) {
     
     return (
       <>
-      <h1>PlaylistList</h1>
+      <ul className="playlist-container">
+        {playlists.map((playlist) => (
+            //in models, in playlist.ts .id is optional
+            <PlaylistMovie key={playlist._id ? playlist._id.toString() : undefined} playlist={playlist}/>
+        ))}
+      </ul>
       </>
     )
   }

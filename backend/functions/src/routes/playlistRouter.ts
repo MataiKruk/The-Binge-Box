@@ -2,7 +2,7 @@ import express from "express";
 import { getClient } from "../db";
 import { ObjectId } from "mongodb";
 import Playlist from "../models/Playlist";
-import { ShortMovie } from "../models/Movie";
+//import { ShortMovie } from "../models/Movie";
 
 const playlistRouter = express.Router();
 
@@ -12,59 +12,63 @@ const errorResponse = (error: any, res: any) => {
 };
 
 // const movies: ShortMovie[] = [
-//     {
-//       id: 129,
-//       title: "Spirited Away",
-//       poster_path: "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
-//     },
-//     {
-//       id: 4935,
-//       title: "Howl's Moving Castle",
-//       poster_path: "/6pZgH10jhpToPcf0uvyTCPFhWpI.jpg",
-//     },
-//     {
-//       id: 128,
-//       title: "Princess Mononoke",
-//       poster_path: "/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
-//     },
-//     {
-//       id: 81,
-//       title: "Nausicaä of the Valley of the Wind",
-//       poster_path: "/tcrkfB8SRPQCgwI88hQScua6nxh.jpg",
-//     },
-//     {
-//       id: 10515,
-//       title: "Castle in the Sky",
-//       poster_path: "/41XxSsJc5OrulP0m7TrrUeO2hoz.jpg",
-//     },
-//     {
-//       id: 16859,
-//       title: "Kiki's Delivery Service",
-//       poster_path: "/Aufa4YdZIv4AXpR9rznwVA5SEfd.jpg",
+//   {
+//     id: 129,
+//     title: "Spirited Away",
+//     poster_path: "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+//     overview: "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family."
+//   },
+//   {
+//     id: 4935,
+//     title: "Howl's Moving Castle",
+//     poster_path: "/6pZgH10jhpToPcf0uvyTCPFhWpI.jpg",
+//     overview: "Sophie, a young milliner, is turned into an elderly woman by a witch who enters her shop and curses her. She encounters a wizard named Howl and gets caught up in his resistance to fighting for the king."
+//   },
+//   {
+//     id: 128,
+//     title: "Princess Mononoke",
+//     poster_path: "/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
+//     overview: "Ashitaka, a prince of the disappearing Emishi people, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict."
+//   },
+//   {
+//     id: 81,
+//     title: "Nausicaä of the Valley of the Wind",
+//     poster_path: "/tcrkfB8SRPQCgwI88hQScua6nxh.jpg",
+//     overview: "After a global war, the seaside kingdom known as the Valley of the Wind remains one of the last strongholds on Earth untouched by a poisonous jungle and the powerful insects that guard it. Led by the courageous Princess Nausicaä, the people of the Valley engage in an epic struggle to restore the bond between humanity and Earth."
+//   },
+//   {
+//     id: 10515,
+//     title: "Castle in the Sky",
+//     poster_path: "/41XxSsJc5OrulP0m7TrrUeO2hoz.jpg",
+//     overview: "A young boy and a girl with a magic crystal must race against pirates and foreign agents in a search for a legendary floating castle."
+//   },
+//   {
+//     id: 16859,
+//     title: "Kiki's Delivery Service",
+//     poster_path: "/Aufa4YdZIv4AXpR9rznwVA5SEfd.jpg",
+//     overview: "A young witch, on her mandatory year of independent life, finds fitting into a new community difficult while she supports herself by running an air courier service."
+//   }
+// ];
+
+// const ayeshasPlaylist: Playlist[] = [
+//   {
+//       playlist_name: "Ayesha's Ghibli Picks",
+//       movies: movies
+//   }
+// ];
+
+// const insertSampleData = async () => {
+//     try {
+//         const client = await getClient();
+//         const db = client.db("playlists_db");
+//         const result = await db.collection("playlists").insertMany(ayeshasPlaylist);
+//         console.log(result);
+//     } catch (error) {
+//         console.log("Error in playlists");
 //     }
-//   ];
-  
-  
-//   const ayeshasPlaylist: Playlist[] = [
-//     {
-//         playlist_name: "Ayesha's Ghibli Picks",
-//         movies: movies
-//     }
-//   ];
-  
-  
-//   const insertSampleData = async () => {
-//       try {
-//           const client = await getClient();
-//           const db = client.db("playlists_db");
-//           const result = await db.collection("playlists").insertMany(ayeshasPlaylist);
-//           console.log(result);
-//       } catch (error) {
-//           console.log("Error in playlists");
-//       }
-//   };
-//   insertSampleData();
-  
+// };
+// insertSampleData();
+
 
 
 playlistRouter.get("/playlists", async (req, res) => {

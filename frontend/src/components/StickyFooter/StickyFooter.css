@@ -1,0 +1,26 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.9);
+    color: white;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 0;
+  }
+
+
+.parent-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icons {
+  transition: transform 0.2s ease-in-out;
+} 
+
+.icons:hover {
+  transform: scale(1.2);
+}
