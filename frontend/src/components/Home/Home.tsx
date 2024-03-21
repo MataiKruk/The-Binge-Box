@@ -21,7 +21,7 @@ function Home() {
     return (
       <>
       <h1>Home</h1>
-      <PlaylistList></PlaylistList>
+      <PlaylistList playlists={playlists} onUpdate={getPreMadePlaylists} />
       </>
     )
   }
