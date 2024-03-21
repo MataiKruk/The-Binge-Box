@@ -2,7 +2,7 @@ import express from "express";
 import { getClient } from "../db";
 import { ObjectId } from "mongodb";
 import Playlist from "../models/Playlist";
-import { ShortMovie } from "../models/Movie";
+//import { ShortMovie } from "../models/Movie";
 
 const playlistRouter = express.Router();
 
