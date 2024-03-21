@@ -9,6 +9,7 @@ import Search from "./components/Search/Search";
 import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
 import Home from "./components/Home/Home";
+import UserPlaylist from "./components/UserPlaylist/UserPlaylist";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/home" element={<Home />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/user-playlist" element={<UserPlaylist />} />
             <Route path="/advanced-search" element={<AdvancedSearch/>}></Route>
             <Route path="/movie/:id" element={<MovieDetails/>} />
             <Route path="*" element={<Navigate to="/" />} />

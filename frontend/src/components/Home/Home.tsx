@@ -3,6 +3,7 @@ import Playlist from "../../models/Playlist";
 import { getAllPlaylists } from "../../services/playlistAPI";
 import PlaylistList from "../PlaylistList/PlaylistList";
 import "./Home.css"
+import StickyFooter from "../StickyFooter/StickyFooter";
 
 function Home() {
     const [playlists, setPlaylists] = useState<Playlist[]>([]);
@@ -18,6 +19,7 @@ function Home() {
       <>
       <div className="binge-box-img"></div>
       <PlaylistList playlists={playlists} />
+      <StickyFooter></StickyFooter>
       </>
     )
   }

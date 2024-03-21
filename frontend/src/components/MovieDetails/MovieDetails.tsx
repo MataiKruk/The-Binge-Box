@@ -4,6 +4,7 @@ import Movie from "../../models/Movie";
 import { getMovieById } from "../../services/movieAPI";
 import "./MovieDetails.css";
 import { NavLink } from "react-router-dom";
+import StickyFooter from "../StickyFooter/StickyFooter";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState<Movie | null>(null);
@@ -22,10 +23,11 @@ const MovieDetails = () => {
   const genreNames = movie?.genres?.map((genre) => genre.name).join(", ");
 
   return (
+    <>
     <div className="movieDetailsContainer">
       <div className="mainContainer">
         <div className="imgContainer">
-          <img src={movie?.poster_path? posterUrl + movie?.poster_path : "/src/images/poster-not-available.jpg"} />
+          <img src={movie?.poster_path ? posterUrl + movie?.poster_path : "/src/images/poster-not-available.jpg"} />
           <p>{movie?.title}</p>
         </div>
 
@@ -43,11 +45,13 @@ const MovieDetails = () => {
 
       <div className="btnContainer">
         <NavLink to="/search">
-        <button onClick={() => window.history.back()}>Go Back</button>
+          <button onClick={() => window.history.back()}>Go Back</button>
         </NavLink>
         <button>Add to my playlist</button>
       </div>
     </div>
+    <StickyFooter></StickyFooter>
+    </>
   );
 };
 

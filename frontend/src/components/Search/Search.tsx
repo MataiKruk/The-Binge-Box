@@ -3,6 +3,7 @@ import Movie from "../../models/Movie";
 import { getMoviesBySearch, getPopularMovies } from "../../services/movieAPI";
 import { NavLink } from "react-router-dom";
 import "./Search.css";
+import StickyFooter from "../StickyFooter/StickyFooter";
 
 const Search = () => {
   const [pageNumb, setPageNumb] = useState<number>(1);
@@ -49,6 +50,7 @@ const Search = () => {
   };
 
   return (
+    <>
     <div>
       <form onSubmit={handleSubmit}>
         <div className="searchBox">
@@ -127,6 +129,8 @@ const Search = () => {
         </div>
       )}
     </div>
+    <StickyFooter></StickyFooter>
+    </>
   );
 };
 

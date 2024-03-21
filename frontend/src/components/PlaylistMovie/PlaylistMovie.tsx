@@ -19,6 +19,9 @@ function PlaylistMovie({playlist}: PlaylistMovieProps) {
                             <img src={posterUrl + movie.poster_path} alt={movie.title} />
                         )}
                         <p className="movie-container-font">{movie.title}</p>
+                        <div>
+                        <p>{movie.overview}</p>
+                        </div>
                     </li>
                 ))}
             </ul>

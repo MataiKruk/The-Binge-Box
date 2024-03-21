@@ -22,12 +22,16 @@ h2 {
     margin-left: .5em;
     border-radius: 1em;
     box-shadow: 1px 1px 10px 20px #1d1d1e;
+
 }
 
 .movie-container-font {
     font-weight: bold;
+    color: white;
 }
 
 .playlist-playlist-container {
     background-color: #1d1d1e;
+    color: white;
 }
+
