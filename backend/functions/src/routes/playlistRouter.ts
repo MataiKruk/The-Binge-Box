@@ -2,6 +2,7 @@ import express from "express";
 import { getClient } from "../db";
 import { ObjectId } from "mongodb";
 import Playlist from "../models/Playlist";
+import { ShortMovie } from "../models/Movie";
 
 const playlistRouter = express.Router();
 
@@ -10,7 +11,62 @@ const errorResponse = (error: any, res: any) => {
    res.status(500).json({ message: "Internal Server Error" });
 };
 
-// get all playlists
+// const movies: ShortMovie[] = [
+//     {
+//       id: 129,
+//       title: "Spirited Away",
+//       poster_path: "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+//     },
+//     {
+//       id: 4935,
+//       title: "Howl's Moving Castle",
+//       poster_path: "/6pZgH10jhpToPcf0uvyTCPFhWpI.jpg",
+//     },
+//     {
+//       id: 128,
+//       title: "Princess Mononoke",
+//       poster_path: "/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
+//     },
+//     {
+//       id: 81,
+//       title: "Nausicaä of the Valley of the Wind",
+//       poster_path: "/tcrkfB8SRPQCgwI88hQScua6nxh.jpg",
+//     },
+//     {
+//       id: 10515,
+//       title: "Castle in the Sky",
+//       poster_path: "/41XxSsJc5OrulP0m7TrrUeO2hoz.jpg",
+//     },
+//     {
+//       id: 16859,
+//       title: "Kiki's Delivery Service",
+//       poster_path: "/Aufa4YdZIv4AXpR9rznwVA5SEfd.jpg",
+//     }
+//   ];
+  
+  
+//   const ayeshasPlaylist: Playlist[] = [
+//     {
+//         playlist_name: "Ayesha's Ghibli Picks",
+//         movies: movies
+//     }
+//   ];
+  
+  
+//   const insertSampleData = async () => {
+//       try {
+//           const client = await getClient();
+//           const db = client.db("playlists_db");
+//           const result = await db.collection("playlists").insertMany(ayeshasPlaylist);
+//           console.log(result);
+//       } catch (error) {
+//           console.log("Error in playlists");
+//       }
+//   };
+//   insertSampleData();
+  
+
+
 playlistRouter.get("/playlists", async (req, res) => {
  try {
    const client = await getClient();
