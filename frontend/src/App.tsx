@@ -8,6 +8,7 @@ import Main from "./components/Main/Main";
 import Search from "./components/Search/Search";
 import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/advanced-search" element={<AdvancedSearch/>}></Route>
             <Route path="/movie/:id" element={<MovieDetails/>} />
