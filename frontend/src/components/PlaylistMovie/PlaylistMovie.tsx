@@ -3,23 +3,22 @@ import "./PlaylistMovie.css"
 
 interface PlaylistMovieProps {
     playlist: Playlist;
-    onUpdate: () => void;
 }
 
-function PlaylistMovie({playlist, onUpdate}: PlaylistMovieProps) {
+function PlaylistMovie({playlist}: PlaylistMovieProps) {
     const posterUrl = "https://image.tmdb.org/t/p/w200"
 
     return (
       <>
-        <li>
+        <li className="playlist-playlist-container">
             <h2>{playlist.playlist_name}</h2>
-            <ul>
+            <ul className="playlist-movie-container">
                 {playlist.movies.map((movie, index) => (
-                    <li key={index}>
-                        <p>Title: {movie.title}</p>
+                    <li className="movie-container" key={index}>
                         {movie.poster_path && (
                             <img src={posterUrl + movie.poster_path} alt={movie.title} />
                         )}
+                        <p className="movie-container-font">{movie.title}</p>
                     </li>
                 ))}
             </ul>

@@ -1,0 +1,18 @@
+body {
+    background-color: #d8dde3;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.binge-box-img {
+        background-image: url(/Users/AyeshaShamsher/Desktop/Code/Grand-Circus/Final_project_Binge_box/The-Binge-Box/frontend/the-binge-box-logo.png);
+        background-size: cover;
+        background-position: center; 
+        width: 500px; 
+        height: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }

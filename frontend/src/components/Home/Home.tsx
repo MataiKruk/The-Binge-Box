@@ -2,15 +2,11 @@ import { useState, useEffect } from "react";
 import Playlist from "../../models/Playlist";
 import { getAllPlaylists } from "../../services/playlistAPI";
 import PlaylistList from "../PlaylistList/PlaylistList";
+import "./Home.css"
 
 function Home() {
     const [playlists, setPlaylists] = useState<Playlist[]>([]);
 
-    const getPreMadePlaylists = () => {
-      getAllPlaylists().then((playlists) => {
-        setPlaylists(playlists);
-      });
-    }
   
     useEffect(() => {
       getAllPlaylists().then((playlists) => {
@@ -20,8 +16,8 @@ function Home() {
 
     return (
       <>
-      <h1>Home</h1>
-      <PlaylistList playlists={playlists} onUpdate={getPreMadePlaylists} />
+      <div className="binge-box-img"></div>
+      <PlaylistList playlists={playlists} />
       </>
     )
   }
