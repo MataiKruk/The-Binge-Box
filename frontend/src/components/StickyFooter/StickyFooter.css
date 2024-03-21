@@ -18,5 +18,9 @@ footer {
 }
 
 .icons {
-    
+  transition: transform 0.2s ease-in-out;
+} 
+
+.icons:hover {
+  transform: scale(1.2);
 }
