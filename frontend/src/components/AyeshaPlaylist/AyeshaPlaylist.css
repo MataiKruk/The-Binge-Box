@@ -1,0 +1,147 @@
+.ayesha-body {
+    /* background-color: #121212; */
+    background-image: url(seamless-pattern-funny-baby-monsters-children-s-print-textile-wallpaper-vector.jpg);
+    background-repeat: repeat;
+    background-size: 800px;
+    padding-bottom: 7em;
+}
+
+.ayesha-playlist-name {
+    color: rgba(241, 125, 121);
+    background-color: rgba(255, 255, 255, 0.78);
+    text-align: center;
+    margin-top: 0;
+    padding-top: .5em;
+}
+
+.ayesha-movie-title {
+    color:  rgb(255, 225, 223);
+    margin: 0;
+    display: inline;
+}
+
+.ayesha-movie-overview {
+    color: rgb(255, 225, 223);
+    margin-top: .5em;
+}
+
+.ayesha-movie-poster {
+    border-radius: 1em;
+}
+
+.ayesha-movie-container-parent {
+    display: flex;
+    background-color: rgba(241, 125, 121, 0.907);
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 1em;
+    padding: 1em;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.ayesha-movie-container-parent:hover {
+    transform: scale(1.05);
+  }
+
+.ayesha-movie-container-child {
+    display: block;
+    margin-left: 1em;
+}
+
+.ayesha-movie-checkbox {
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  align-items: center;
+}
+
+.ayesha-not-seen {
+  font-size: small;
+  margin: 0;
+  margin-top: .5em;
+  padding: 0;
+  padding-right: 0.3em;
+  display: inline;
+  color: #fcc82d;
+}
+
+.ayesha-seen {
+  font-size: small;
+  margin: 0;
+  margin-top: .5em;
+  padding: 0;
+  padding-right: 0.3em;
+  display: inline;
+  color: #518739;
+}
+
+.ayesha-svg {
+  vertical-align: middle; 
+  margin: 0; 
+  margin-top: .5em;
+  padding: 0; 
+  width: 1.5em; 
+  height: 1.5em; 
+  transition: transform 0.2s ease-in-out;
+}
+
+.ayesha-svg:hover {
+  transform: scale(1.2);
+}
+
+.ayesha-seen-eye-svg-color {
+  fill: #518739;
+}
+
+.ayesha-not-seen-svg {
+  vertical-align: middle; 
+  margin: 0; 
+  margin-top: .5em;
+  padding: 0; 
+  width: 1.5em; 
+  height: 1.5em; 
+  transition: transform 0.2s ease-in-out;
+}
+
+.ayesha-not-seen-svg:hover {
+  transform: scale(1.2);
+}
+
+.ayesha-progress-bar-title {
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.7);
+    position: fixed;
+    bottom: 80.5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fefdf9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 23px;
+}
+
+.ayesha-full-container-progress-bar {
+    position: fixed;
+    left: 0;
+    bottom: 55px;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.7);
+    padding: 10px; 
+  }
+  
+  .ayesha-progress-container {
+    width: 80%;
+    margin: 0 auto; 
+    background-color: #222222;
+    border-radius: 5em;
+  }
+  
+  .ayesha-progress-bar {
+    height: 20px;
+    background-color:  #518739;
+    border-radius: 5em;
+  }
