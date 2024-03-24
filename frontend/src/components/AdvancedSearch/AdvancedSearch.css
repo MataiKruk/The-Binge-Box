@@ -1,0 +1,67 @@
+label {
+    margin-right: 5px;
+}
+
+.advanced-search-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.actor-search-box {
+    display: flex;
+}
+
+.release-dates-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.release-date-before, .release-date-after {
+    display: flex;
+    float: right;
+    text-align: left;
+}
+
+.genre-checkboxes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.genre-checkboxes {
+    display: flex;
+    flex-direction: column;
+    max-height: 125px;
+    width: fit-content;
+    overflow: scroll;
+    align-items: center;
+    background-color: darkgrey;
+    border: 2px black solid;
+    border-radius: 1rem;
+}
+
+.genre-checkbox {
+    margin-right: 20px;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.preSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 40%;
+}
+
+.preSearch img {
+    width: 150px;
+    height: 150px;
+}
+
+.filteredMoviesContainer {
+    text-align: center;
+}

@@ -20,6 +20,10 @@ const MovieDetails = () => {
     }
   }, []);
 
+  const goBack = () => {
+    history.back();
+  }
+
   const genreNames = movie?.genres?.map((genre) => genre.name).join(", ");
 
   return (
@@ -45,7 +49,7 @@ const MovieDetails = () => {
 
       <div className="btnContainer">
         <NavLink to="/search">
-          <button onClick={() => window.history.back()}>Go Back</button>
+          <button onClick={goBack}>Go Back</button>
         </NavLink>
         <button>Add to my playlist</button>
       </div>

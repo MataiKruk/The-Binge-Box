@@ -13,6 +13,12 @@ const getAllPlaylists = async (): Promise<Playlist[]> => {
     return response.data;
 };
 
+const getPlaylistByID = async (id: string): Promise<Playlist> => {
+    const response = await axios.get<Playlist>(`${apiUrl}/${id}`);
+
+    return response.data;
+};
+
 const updatePlaylist = (id: string, playlist: Playlist) => {
     return axios.put(fullUrl + id, playlist);
 };
@@ -35,9 +41,10 @@ const getMohammadPlaylist = async (id: string) => {
     return mohammadData.data;
 };
 
-const getAyeshaPlaylist = async (id: string) => {
+const getAyeshaPlaylist = async (id: string) : Promise<Playlist> => {
     const ayeshaData = await axios.get<Playlist>(`${fullUrl}/${id}`);
+    console.log(ayeshaData.data)
     return ayeshaData.data;
 };
 
-export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist, getMataiPlaylist, getMohammadPlaylist, getAyeshaPlaylist };
+export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist, getMataiPlaylist, getMohammadPlaylist, getAyeshaPlaylist, getPlaylistByID };
