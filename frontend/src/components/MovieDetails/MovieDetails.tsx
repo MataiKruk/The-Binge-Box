@@ -19,6 +19,10 @@ const MovieDetails = () => {
     }
   }, []);
 
+  const goBack = () => {
+    history.back();
+  }
+
   const genreNames = movie?.genres?.map((genre) => genre.name).join(", ");
 
   return (
