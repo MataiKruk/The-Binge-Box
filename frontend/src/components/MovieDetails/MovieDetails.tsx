@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import Movie from "../../models/Movie";
 import { getMovieById } from "../../services/movieAPI";
 import "./MovieDetails.css";
-import { NavLink } from "react-router-dom";
 import StickyFooter from "../StickyFooter/StickyFooter";
 
 const MovieDetails = () => {
@@ -28,33 +27,33 @@ const MovieDetails = () => {
 
   return (
     <>
-    <div className="movieDetailsContainer">
-      <div className="mainContainer">
-        <div className="imgContainer">
-          <img src={movie?.poster_path ? posterUrl + movie?.poster_path : "/src/images/poster-not-available.jpg"} />
-          <p>{movie?.title}</p>
+      <div className="movieDetailsContainer">
+        <div className="mainContainer">
+          <div className="imgContainer">
+            <img src={movie?.poster_path ? posterUrl + movie?.poster_path : "/src/images/poster-not-available.jpg"} alt={movie?.title} />
+            <p className="img-container-p">{movie?.title}</p>
+          </div>
+
+          <div className="infoContainer">
+            <h2 className="movie-details-h2">{movie?.original_title}</h2>
+            <p className="movie-details-p">Genres: {genreNames}</p>
+            <p className="movie-details-p">Runtime: {movie?.runtime}min</p>
+            <p className="movie-details-p">Release Date: {movie?.release_date}</p>
+          </div>
         </div>
 
-        <div className="infoContainer">
-          <p>Original Title: {movie?.original_title}</p>
-          <p>Genres: {genreNames}</p>
-          <p>Runtime: {movie?.runtime}min</p>
-          <p>Release Date: {movie?.release_date}</p>
+        <div className="overviewContainer">
+          <p> Description: {movie?.overview}</p>
+        </div>
+
+        <div className="btnContainer">
+          <NavLink to="/search">
+            <button className="btn--goback" onClick={() => window.history.back()}>Go Back</button>
+          </NavLink>
+          <a href="#" className="btn btn--doar">Add to my playlist</a>
         </div>
       </div>
-
-      <div className="overviewContainer">
-        <p>Overview: {movie?.overview}</p>
-      </div>
-
-      <div className="btnContainer">
-        <NavLink to="/search">
-          <button onClick={goBack}>Go Back</button>
-        </NavLink>
-        <button>Add to my playlist</button>
-      </div>
-    </div>
-    <StickyFooter></StickyFooter>
+      <StickyFooter />
     </>
   );
 };
