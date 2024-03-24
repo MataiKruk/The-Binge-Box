@@ -103,7 +103,7 @@ const Search = () => {
 
       {isSearching && (
         <div className="searchedMoviesContainer">
-          <button
+          <button className="glow-on-hover"
             onClick={() => {
               setIsSearching(false);
               setPageNumb(1);
@@ -112,7 +112,7 @@ const Search = () => {
             Back to Browse
           </button>
 
-          <h2>Search Results:</h2>
+          <h2 className="popular-movies-title-search-results">Search Results:</h2>
           <div className="movieCoversContainer">
             {searchedMovies.map((movie) => (
               <div key={movie.id} className="popularMovie">
