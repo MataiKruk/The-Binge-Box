@@ -11,9 +11,8 @@
 }
 
 .logo {
-  max-width: 650px;
-  height: 450px;
-  margin-top: -200px;
+  width: 600px;
+  height: 500px;
   border: 2px solid black;
 }
 
