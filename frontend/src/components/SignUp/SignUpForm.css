@@ -1,0 +1,27 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.sign-up-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 300px;
+}
+
+.sign-up-form p.form-error {
+  color: red;
+}
+
+button {
+  padding: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #d8dde4;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+}

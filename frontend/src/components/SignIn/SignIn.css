@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 64px);
 }
 
 .logo-container {
@@ -11,8 +11,8 @@
 }
 
 .logo {
-  width: 600px;
-  height: 500px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   border: 2px solid black;
 }
 
@@ -65,4 +65,21 @@
   background-color: #d8dde4;
   color: rgb(0, 0, 0);
   border: 2px solid black;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-in-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 300px;
+}
+
+.sign-in-form p.form-error {
+  color: red;
 }
