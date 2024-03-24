@@ -4,6 +4,9 @@ import { getMoviesBySearch, getPopularMovies } from "../../services/movieAPI";
 import { NavLink } from "react-router-dom";
 import "./Search.css";
 import StickyFooter from "../StickyFooter/StickyFooter";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Search = () => {
   const [pageNumb, setPageNumb] = useState<number>(1);
@@ -51,7 +54,8 @@ const Search = () => {
 
   return (
     <>
-    <div>
+    <div className="search-body">
+    <div className="binge-box-search-img"></div>
       <form onSubmit={handleSubmit}>
         <div className="searchBox">
           <input
@@ -61,23 +65,23 @@ const Search = () => {
             name="search"
             onChange={(e) => setSearchQuery(e.target.value)}
           ></input>
-          <button type="submit">Submit</button>
+          <button className="glow-on-hover" type="submit">Submit</button>
         </div>
       </form>
 
       <div className="pageInfo">
-        <button onClick={handlePrevPage} disabled={pageNumb < 2 ? true : false}>
-          {"<"}
+        <button className="arrow-icon" onClick={handlePrevPage} disabled={pageNumb < 2 ? true : false}>
+        <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <p>Page: {pageNumb}</p>
-        <button onClick={handleNextPage} disabled={!moviesReturned}>
-          {">"}
+        <p className="page-number">Page: {pageNumb}</p>
+        <button className="arrow-icon" onClick={handleNextPage} disabled={!moviesReturned}>
+        <FontAwesomeIcon icon={faArrowRight} className="arrow-icon"/>
         </button>
       </div>
 
       {!isSearching && (
         <div className="popularMoviesContainer">
-          <h2>Popular Movies:</h2>
+          <h2 className="popular-movies-title">Popular Movies:</h2>
           <div className="movieCoversContainer">
             {popularMovies.map((movie) => (
               <div key={movie.id} className="popularMovie">

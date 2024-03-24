@@ -17,11 +17,20 @@ function PlaylistMovie({playlist}: PlaylistMovieProps) {
       setShowFullOverview(!showFullOverview);
     };
   
+    // Function to generate the playlist route so I don't have to hardcode them into app.tsx
+  const getPlaylistRoute = (playlistName: string) => {
+    return `/${playlistName.toLowerCase().replace(/\s+/g, '-')}-playlist`;
+  };
 
     return (
       <>
          <li className="playlist-playlist-container">
-                <h3>{playlist.playlist_name}</h3>
+         <h3>
+          {/* NavLink the playlist routes! */}
+          <NavLink to={getPlaylistRoute(playlist.playlist_name)} style={{ textDecoration: 'none', color: 'white'}}>
+            {playlist.playlist_name}
+          </NavLink>
+        </h3>
                 <ul className="playlist-movie-container">
                     {playlist.movies.map((movie, index) => (
                         <li className="movie-container" key={index}>

@@ -25,4 +25,19 @@ const deletePlaylist = (id: string) => {
     return axios.delete(fullUrl + id);
 };
 
-export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist };
+const getMataiPlaylist = async (id: string) => {
+    const mataiData = await axios.get<Playlist>(`${fullUrl}/${id}`);
+    return mataiData.data;
+};
+
+const getMohammadPlaylist = async (id: string) => {
+    const mohammadData = await axios.get<Playlist>(`${fullUrl}/${id}`);
+    return mohammadData.data;
+};
+
+const getAyeshaPlaylist = async (id: string) => {
+    const ayeshaData = await axios.get<Playlist>(`${fullUrl}/${id}`);
+    return ayeshaData.data;
+};
+
+export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist, getMataiPlaylist, getMohammadPlaylist, getAyeshaPlaylist };
