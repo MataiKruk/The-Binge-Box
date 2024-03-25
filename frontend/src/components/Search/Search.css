@@ -2,9 +2,10 @@
     background-image: url(vhs-tapes-seamless-pattern-vector-31339529.jpg);
     background-repeat: repeat;
     background-size: 800px;
-    padding-bottom: 4em;
+    padding-bottom: 3.4em;
     padding-top: 1em;
 }
+
 
 .binge-box-search-img {
     background-image: url(the-binge-box-logo.png);
@@ -30,17 +31,20 @@
     margin-right: 10px;
     background-color: #1d1d1e;
     color: #767676;
-    padding: 1em;
+    padding: 1.5em;
     border-radius: 2em;
     border: none;
 }
 
 
 .arrow-icon {
-    background-color: none;
+    background-color: #1d1d1e;
+    color: white;
     border: none;
     border-radius: 3em;
-    font-size: 24px; 
+    margin: 0;
+    padding: 0;
+    font-size: 20px; /* Adjust the font size as needed */
     transition: transform 0.2s ease-in-out;
 }
 
@@ -49,38 +53,36 @@
   }
 
 .page-number {
-    color: #000000;
+    color: white;
     font-weight: bold;
     font-size: small;
-    padding: .5em;
-    margin-left: .5em;
-    margin-right: .5em;
-    background-color: #d8dde3;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin: 0;
+    background-color: #1d1d1e;
     border-radius: 3em;
 }
 
 .popular-movies-title {
-    background-color: #d8dde3;
-    color: #000000;
+    background-color: #1d1d1e;
+    color: white;
     font-weight: bold;
     font-size: medium;
-    margin: 0 auto; 
-    margin-bottom: 1em;
-    border-radius: 1em;
-    width: 50%;
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 100%; /* Updated width to cover the entire container */
     height: 50px;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 .popular-movies-title-search-results {
-    background-color: #d8dde3;
-    color: #000000;
+    background-color: none;
+    color: white;
     font-weight: bold;
     font-size: medium;
     margin: 0 auto; 
-    margin-top: 1em;
     margin-bottom: 1em;
     border-radius: 1em;
     width: 50%;
@@ -93,30 +95,42 @@
 
 .popularMoviesContainer, .searchedMoviesContainer {
     text-align: center;
+    background-color: #1d1d1e;
+    padding-top: 2em;
+    padding: 1em;
+    padding: 1em;
 }
 
 .movieCoversContainer {
     display: grid;
+    background-color: #1d1d1e;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px; /* Adjust the gap between movies */
+    gap: 5px; /* Adjust the gap between movies */
     justify-items: center;
 }
 
 .popularMovie {
-    width: 200px; /* Adjust the width of each movie */
-    height: auto; 
-    padding: 1.5em; 
-    margin-bottom: 20px; 
-    border-radius: 1em; 
+    width: 225px; 
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(216, 221, 227, 0.9);
+    background-color: #181818;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    text-overflow: ellipsis " [...";
+    transition: transform 0.2s ease-in-out;
+}
+
+.popularMovie:hover {
+    transform: scale(1.05);
 }
 
 .popularMovie > p {
     font-size: 1em;
-    color: #767676;
+    color: white;
     text-align: center;
     margin-bottom: 0.5em; /* Adjust the margin bottom of the movie title */
 }
@@ -124,6 +138,7 @@
 .popularMovie > img {
     width: 100px; /* Adjust the width of the movie poster */
     margin-bottom: 0.5em; /* Adjust the margin bottom of the movie poster */
+    padding: 1em;
 }
 
 /* img {
@@ -135,6 +150,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: #1d1d1e;
 }
 
 

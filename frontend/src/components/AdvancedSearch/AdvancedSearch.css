@@ -2,9 +2,24 @@ label {
     margin-right: 5px;
 }
 
+.advanced-search-body {
+    background-image: url(new-magnifying-glass-seamless-pattern-vector-4302982.jpg);
+    background-repeat: repeat;
+    background-size: 500px;
+    padding-bottom: 3.4em;
+    padding-top: 1em;
+}
+
 .advanced-search-form-container {
+    margin: 2em;
+    padding: 2em;
+    border-radius: 1em;
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
+    background-color: #1d1d1e;
+    
 }
 
 .actor-search-box {
@@ -36,8 +51,11 @@ label {
     overflow: scroll;
     align-items: center;
     background-color: darkgrey;
-    border: 2px black solid;
-    border-radius: 1rem;
+    /* border: 2px black solid; */
+    border-radius: .5rem;
+    scrollbar-color: #606060 #393939;
+    padding: 1em;
+    margin-right: .7em;
 }
 
 .genre-checkbox {
@@ -50,7 +68,7 @@ label {
     margin-top: 16px;
 }
 
-.preSearch {
+/* .preSearch {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,8 +78,65 @@ label {
 .preSearch img {
     width: 150px;
     height: 150px;
-}
+} */
 
 .filteredMoviesContainer {
     text-align: center;
+}
+
+.page-info-advanced-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d1d1e;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.movieCoversContainer-advanced-search {
+    display: grid;
+    background-color: #1d1d1e;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px; /* Adjust the gap between movies */
+    justify-items: center;
+    padding-top: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.input-style {
+    border-radius: .5em;
+    margin-bottom: .5em;
+    padding: .5em;
+    text-align: left;
+    border: none;
+}
+
+.input-label {
+    color: white;
+    border-radius: .5em;
+    margin-bottom: .5em;
+    padding: .5em;
+    text-align: left;
+}
+
+.page-info-advanced-search {
+    color: black;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.advanced-search-search-results-title {
+    background-color: #1d1d1e;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    margin: 0 auto; 
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 0;
 }

@@ -7,13 +7,13 @@ body {
 }
 
 .binge-box-img {
-        background-image: url(the-binge-box-logo.png);
-        background-size: cover;
-        background-position: center; 
-        width: 500px; 
-        height: 300px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-      }
+  background-image: url(the-binge-box-logo.png);
+  border-radius: 2em;
+  background-size: cover;
+  background-position: center; 
+  height: 300px;
+  width: 400px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the image horizontally */
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
