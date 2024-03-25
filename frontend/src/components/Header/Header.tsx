@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAuth, useUser } from "../../context/AuthContext";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const user = useUser();
@@ -8,7 +9,7 @@ const Header = () => {
 
   return (
     <div className="nav">
-      <p className="nav-logo">The Binge Box</p>
+      <Link to="/home"><p className="nav-logo">The Binge Box</p></Link>
 
       <div className="nav-right">
         {user ? (

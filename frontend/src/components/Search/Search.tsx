@@ -69,6 +69,7 @@ const Search = () => {
         </div>
       </form>
 
+      <h2 className="popular-movies-title">Popular Movies:</h2>
       <div className="pageInfo">
         <button className="arrow-icon" onClick={handlePrevPage} disabled={pageNumb < 2 ? true : false}>
         <FontAwesomeIcon icon={faArrowLeft} />
@@ -81,7 +82,6 @@ const Search = () => {
 
       {!isSearching && (
         <div className="popularMoviesContainer">
-          <h2 className="popular-movies-title">Popular Movies:</h2>
           <div className="movieCoversContainer">
             {popularMovies.map((movie) => (
               <div key={movie.id} className="popularMovie">

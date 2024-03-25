@@ -5,6 +5,8 @@ import Actor from "../../models/Actor";
 import { getMoviesByFilters, getActorByName, Filters } from "../../services/movieAPI";
 import { NavLink } from "react-router-dom";
 import "./AdvancedSearch.css";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AdvancedSearch = () => {
   const [pageNumb, setPageNumb] = useState<number>(1);
@@ -123,12 +125,12 @@ const AdvancedSearch = () => {
   };
 
   return (
-    <div>
+    <div className="advanced-search-body">
       <div className="advanced-search-form-container">
         <form onSubmit={handleSubmit} className="advanced-search-form">
           <div className="actor-search-box">
-          <label>Search By Actor: </label>
-          <input
+          <label className="input-label">Search By Actor: </label>
+          <input className="input-style"
           type="text"
           placeholder="Default: any actor"
           value={searchedActorName}
@@ -137,23 +139,23 @@ const AdvancedSearch = () => {
           </div>
           <div className="release-dates-container">
             <div className="release-date-after">
-              <label>Released After: </label>
-              <input
+              <label className="input-label">Released After: </label>
+              <input className="input-style"
               type="date"
               onChange={(e) => setReleaseDateAfter(e.target.value)}
               ></input>
             </div>
             <div className="release-date-before">
-              <label>Released Before: </label>
-              <input
+              <label className="input-label">Released Before: </label>
+              <input className="input-style"
               type="date"
               onChange={(e) => setReleaseDateBefore(e.target.value)}
               >  
               </input>
             </div>
           </div>
-          <label>Sort By: </label>
-          <select
+          <label className="input-label">Sort By: </label>
+          <select className="input-style"
           onChange={(e) => setSortBy(e.target.value)}
           >
             {sortByOptions.map((option, index) => (
@@ -180,20 +182,20 @@ const AdvancedSearch = () => {
             </div>
           </div>
           <div className="submit-button">
-            <button type="submit">Search</button>
+            <button className="glow-on-hover" type="submit">Search</button>
           </div>
         </form>
       </div>
 
       
 
-      <div className="pageInfo">
-        <button onClick={handlePrevPage} disabled={pageNumb < 2 ? true : false}>
-          {"<"}
+      <div className="page-info-advanced-search">
+        <button className="arrow-icon" onClick={handlePrevPage} disabled={pageNumb < 2 ? true : false}>
+        <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <p>Page: {pageNumb}</p>
-        <button onClick={handleNextPage} disabled={!moviesReturned}>
-          {">"}
+        <p className="page-number">Page: {pageNumb}</p>
+        <button className="arrow-icon" onClick={handleNextPage} disabled={!moviesReturned}>
+        <FontAwesomeIcon icon={faArrowRight} className="arrow-icon"/>
         </button>
       </div>
     
@@ -207,8 +209,8 @@ const AdvancedSearch = () => {
         <div className="after-search-display">
         
       <div className="filteredMoviesContainer">
-          <h2>Search Results:</h2>
-          <div className="movieCoversContainer">
+          <h2 className="advanced-search-search-results-title">Search Results:</h2>
+          <div className="movieCoversContainer-advanced-search">
             {searchedMovies.map((movie) => (
               <div key={movie.id} className="popularMovie">
                 <NavLink to={`/movie/${movie.id}`}>
@@ -228,12 +230,12 @@ const AdvancedSearch = () => {
       </div>
         )}
 
-        {!isSearching && (
+        {/* {!isSearching && (
           <div className="preSearch">
             <img src="/src/images/magnifying-glass.png" />
             <p>Search for Movies!</p>
           </div>
-        )}
+        )} */}
       
       <StickyFooter/>
     </div>
