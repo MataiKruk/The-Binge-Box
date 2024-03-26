@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Playlist from "../../models/Playlist";
-import { getPlaylistByID } from "../../services/playlistAPI";
+import { getPlaylistByID, updatePlaylist } from "../../services/playlistAPI";
 import { NavLink } from "react-router-dom";
 import StickyFooter from "../StickyFooter/StickyFooter";
 import "./UserPlaylist.css";
@@ -11,7 +11,7 @@ function UserPlaylist() {
   const [seenStatus, setSeenStatus] = useState<boolean[]>([]);
 
   useEffect(() => {
-    getPlaylistByID("65fc173e618d7ab6ba2521b7").then((playlist) => {
+    getPlaylistByID("6601d1df0db423fb6474403c").then((playlist) => {
       setUserPlaylist(playlist);
       setSeenStatus(new Array(playlist?.movies.length || 0).fill(false));
     });
@@ -36,6 +36,18 @@ function UserPlaylist() {
   const progressBarStyle = {
     width: `${percentSeen}%`,
   };
+
+  const handleRemoveMovie = (movieToRemoveID : number) => {
+    if(userPlaylist) {
+      const updatedMovies = userPlaylist.movies.filter(movie => movie.id !== movieToRemoveID);
+      const updatedPlaylist = {
+        ...userPlaylist,
+        movies: updatedMovies
+      }
+     updatePlaylist(userPlaylist._id, updatedPlaylist);
+     setUserPlaylist(updatedPlaylist);
+    }
+  }
 
   return (
     <>
@@ -106,6 +118,7 @@ function UserPlaylist() {
                     </svg>
                   )}
                 </div>
+                <button onClick={() => {handleRemoveMovie(movie.id)}}>Remove</button>
                 <p className="user-movie-overview">{movie.overview}</p>
               </div>
             </div>

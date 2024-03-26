@@ -49,7 +49,6 @@ const AdvancedSearch = () => {
     {id: "primary_release_date.asc", name: "Release Date - Ascending"},
     {id: "primary_release_date.desc", name: "Release Date - Descending"},
     {id: "primary_release_date.asc", name: "Release Date - Ascending"},
-    {id: "primary_release_date.desc", name: "Release Date - Descending"},
     {id: "popularity.asc", name: "Popularity - Ascending"},
     {id: "popularity.desc", name: "Popularity - Descending"}
   ]
@@ -156,6 +155,7 @@ const AdvancedSearch = () => {
           </div>
           <label className="input-label">Sort By: </label>
           <select className="input-style"
+
           onChange={(e) => setSortBy(e.target.value)}
           >
             {sortByOptions.map((option, index) => (
@@ -163,6 +163,7 @@ const AdvancedSearch = () => {
             ))}
             
           </select>
+
           
           <div className="genre-checkboxes-container">
             <p>Genre Selection: </p>
@@ -186,6 +187,7 @@ const AdvancedSearch = () => {
           </div>
         </form>
       </div>
+      
 
       
 
@@ -231,6 +233,9 @@ const AdvancedSearch = () => {
         )}
 
         {/* {!isSearching && (
+=======
+          </div>
+        )}
           <div className="preSearch">
             <img src="/src/images/magnifying-glass.png" />
             <p>Search for Movies!</p>
