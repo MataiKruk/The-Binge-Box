@@ -3,7 +3,7 @@ import Search from "./components/Search/Search";
 import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
 import Home from "./components/Home/Home";
-import UserPlaylist from "./components/UserPlaylist/UserPlaylist";
+import UserProfile from "./components/UserProfile/UserProfile";
 import SignIn from "./components/SignIn/SignIn";
 import MataiPlaylist from "./components/MataiPlaylist/MataiPlaylist";
 import AyeshaPlaylist from "./components/AyeshaPlaylist/AyeshaPlaylist";
@@ -36,7 +36,7 @@ function App() {
               path="/ayesha's-ghibli-picks-playlist"
               element={<AyeshaPlaylist />}
             />
-            <Route path="/user-playlist" element={<UserPlaylist />} />
+            <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/advanced-search" element={<AdvancedSearch />}></Route>
             <Route path="/movie/:id" element={<MovieDetails />} />
           </Routes>
