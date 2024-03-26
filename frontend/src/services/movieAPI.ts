@@ -27,6 +27,13 @@ export interface Filters {
     sort_by?: string
 }
 
+export interface Filters {
+    with_genres?: string,
+    'primary_release_date.gte'?: string,
+    'primary_release_date.lte'?: string,
+    sort_by?: string
+}
+
 const getPopularMovies = async (page: number = 1) : Promise<Movie[]> => {
     const response = await axios.get<ApiResponse>(`${baseUrl}/discover/movie`, {params: {
         api_key: apiKey,

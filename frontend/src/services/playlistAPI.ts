@@ -1,5 +1,6 @@
 import axios from "axios";
 import Playlist from "../models/Playlist";
+import { ObjectId } from "mongodb";
 
 const baseUrl: string = import.meta.env.VITE_API_URL || "";
 const playlistsEndpoint = 'playlists';
@@ -19,8 +20,8 @@ const getPlaylistByID = async (id: string): Promise<Playlist> => {
     return response.data;
 };
 
-const updatePlaylist = (id: string, playlist: Playlist) => {
-    return axios.put(fullUrl + id, playlist);
+const updatePlaylist = (id: ObjectId, playlist: Playlist) => {
+    return axios.put(`${fullUrl}/${id}`, playlist);
 };
 
 const addPlaylist = (playlist: Playlist) => {
