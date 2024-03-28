@@ -1,21 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import Movie from "../../models/Movie";
 import { ShortMovie } from "../../models/Movie";
 import { getMovieById } from "../../services/movieAPI";
-import { updatePlaylist, getPlaylistByID } from "../../services/playlistAPI";
+import {
+  updatePlaylist,
+  getPlaylistByID,
+  getPlaylistsByUser,
+} from "../../services/playlistAPI";
 import "./MovieDetails.css";
 import StickyFooter from "../StickyFooter/StickyFooter";
 import Playlist from "../../models/Playlist";
+import AuthContext from "../../context/AuthContext";
+import { ObjectId } from "mongodb";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState<Movie | null>(null);
   const { id } = useParams<{ id: string }>();
-  const [currentPlaylist, setCurrentPlaylist] = useState<Playlist>();
+  const [currentPlaylists, setCurrentPlaylists] = useState<Playlist[]>([]);
   const [newMovie, setNewMovie] = useState<ShortMovie>();
   const [showSuccess, setShowSuccess] = useState<boolean>(false);
+  const [showError, setShowError] = useState<boolean>(false);
   const posterUrl = "https://image.tmdb.org/t/p/w500/";
-  const defaultPlaylistID = "6601d1df0db423fb6474403c";
+  const [currentUserID, setCurrentUserID] = useState<string>("");
+  const { user } = useContext(AuthContext);
+  const [selectedPlaylistID, setSelectedPlaylistID] = useState<ObjectId>();
+  const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist>();
 
   useEffect(() => {
     if (id) {
@@ -26,43 +36,70 @@ const MovieDetails = () => {
   }, [id]);
 
   useEffect(() => {
-    getPlaylistByID(defaultPlaylistID).then((response) => {
-      setCurrentPlaylist(response);
-    });
-  }, [defaultPlaylistID]);
+    if (selectedPlaylistID) {
+      getPlaylistByID(selectedPlaylistID.toString()).then((response) => {
+        setSelectedPlaylist(response);
+      });
+    }
+  }, [selectedPlaylistID]);
 
   useEffect(() => {
-    if (currentPlaylist && newMovie) {
+    if (selectedPlaylist && newMovie) {
       const updatedPlaylist: Playlist = {
-        ...currentPlaylist,
-        movies: [...(currentPlaylist.movies || []), newMovie],
+        ...selectedPlaylist,
+        movies: [...(selectedPlaylist.movies || []), newMovie],
       };
-      updatePlaylist(currentPlaylist._id, updatedPlaylist);
-    }
-  }, [currentPlaylist, newMovie, defaultPlaylistID]);
 
-  const handleAddMovie = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+      if (selectedPlaylist._id) {
+        updatePlaylist(selectedPlaylist._id, updatedPlaylist);
+      }
+    }
+  }, [selectedPlaylist, newMovie]);
+
+  useEffect(() => {
+    if (currentUserID) {
+      getPlaylistsByUser(currentUserID).then((response) => {
+        setCurrentPlaylists(response);
+      });
+    }
+  }, [currentUserID]);
+
+  useEffect(() => {
+    if (user?.uid) {
+      setCurrentUserID(user.uid);
+    }
+  }, [user?.uid]);
+
+  const handleAddMovie = (e: React.FormEvent) => {
     e.preventDefault();
-    //eventually this will target the specific user's playlist,
-    //and even further beyond their specific playlist if they have multiple
-    if (currentPlaylist && movie) {
+
+    if (selectedPlaylist && movie) {
       const currentNewMovie: ShortMovie = {
         id: movie.id,
         title: movie.title,
         poster_path: movie.poster_path,
         overview: movie.overview,
       };
+
       setNewMovie(currentNewMovie);
+
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 3500);
+    } else {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 3500);
     }
+  };
+
+  const handlePlaylistChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedPlaylistIDStr: ObjectId = e.target
+      .value as unknown as ObjectId;
+    setSelectedPlaylistID(selectedPlaylistIDStr);
   };
 
   const goBack = () => {
     history.back();
-  }
+  };
 
   const genreNames = movie?.genres?.map((genre) => genre.name).join(", ");
 
@@ -102,18 +139,34 @@ const MovieDetails = () => {
               Go Back
             </button>
           </NavLink>
-          <a href="#" className="btn btn--doar" onClick={handleAddMovie}>
-            Add to my playlist
-          </a>
+
+          <form onSubmit={handleAddMovie}>
+            <select onChange={handlePlaylistChange}>
+              <option value={""}></option>
+              {currentPlaylists.map((playlist, index) => (
+                <option key={index} value={String(playlist._id)}>
+                  {playlist.playlist_name}
+                </option>
+              ))}
+            </select>
+            <button className="btn btn--doar" type="submit">
+              Add To Playlist
+            </button>
+          </form>
         </div>
       </div>
-
       {showSuccess && (
         <div className="success-message-container">
           <div className="success-message">Movie added successfully!</div>
         </div>
-        )}
-      
+      )}
+
+      {showError && (
+        <div className="error-message-container">
+          <div className="error-message">Error: Please Select a Playlist.</div>
+        </div>
+      )}
+
       <StickyFooter />
     </>
   );

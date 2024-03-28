@@ -142,6 +142,36 @@ playlistRouter.put("/playlists/:id", async (req, res) => {
  } catch (err) { errorResponse(err, res); }
 });
 
+playlistRouter.get("/playlists/user/:user", async (req, res) => {
+  try {
+    const user = req.params.user;
+    const client = await getClient();
+
+    const playlists = await client.db().collection<Playlist>("playlists")
+        .find({ user: user })
+        .toArray();
+    //if no playlists are found, make new playlist
+    if (playlists.length === 0) {
+        const newPlaylist: Playlist = {
+            user: user,
+            playlist_name: "My Playlist",
+            movies: []
+        };
+        
+        await client.db().collection<Playlist>("playlists")
+            .insertOne(newPlaylist);
+        
+        const updatedPlaylists = await client.db().collection<Playlist>("playlists")
+            .find({ user: user })
+            .toArray();
+        
+        res.status(200).json(updatedPlaylists);
+    } else {
+        res.status(200).json(playlists);
+    }
+  } catch (err) { errorResponse(err, res); }
+ });
+
 // shoutoutRouter.get("/students", async (req, res) => {
 //   try {
 //     const name: string | null = (req.query.name as string) || null;

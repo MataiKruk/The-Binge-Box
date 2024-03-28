@@ -11,6 +11,7 @@ import MohammadPlaylist from "./components/MohammadPlaylist/MohammadPlaylist";
 import Header from "./components/Header/Header";
 import SignInForm from "./components/SignIn/SignInForm";
 import SignUpForm from "./components/SignUp/SignUpForm";
+import UserPlaylist from "./components/UserPlaylist/UserPlaylist";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/advanced-search" element={<AdvancedSearch />}></Route>
             <Route path="/movie/:id" element={<MovieDetails />} />
+            <Route path="/playlists/:id" element={<UserPlaylist/>}/>
           </Routes>
         </Router>
       </div>

@@ -10,7 +10,6 @@ const apiUrl = "https://us-central1-the-binge-box.cloudfunctions.net/api/playlis
 const getAllPlaylists = async (): Promise<Playlist[]> => {
     const response = await axios.get<Playlist[]>(apiUrl);
 
-    console.log(response.data)
     return response.data;
 };
 
@@ -29,7 +28,7 @@ const addPlaylist = (playlist: Playlist) => {
 };
 
 const deletePlaylist = (id: string) => {
-    return axios.delete(fullUrl + id);
+    return axios.delete(`${fullUrl}/${id}`);
 };
 
 const getMataiPlaylist = async (id: string) => {
@@ -44,8 +43,12 @@ const getMohammadPlaylist = async (id: string) => {
 
 const getAyeshaPlaylist = async (id: string) : Promise<Playlist> => {
     const ayeshaData = await axios.get<Playlist>(`${fullUrl}/${id}`);
-    console.log(ayeshaData.data)
     return ayeshaData.data;
 };
 
-export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist, getMataiPlaylist, getMohammadPlaylist, getAyeshaPlaylist, getPlaylistByID };
+const getPlaylistsByUser = async (user: string) : Promise<Playlist[]> => {
+    const response = await axios.get<Playlist[]>(`${fullUrl}/user/${user}`);
+    return response.data;
+};
+
+export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist, getMataiPlaylist, getMohammadPlaylist, getAyeshaPlaylist, getPlaylistByID, getPlaylistsByUser };
