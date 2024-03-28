@@ -1,0 +1,39 @@
+.avatar {
+  display: flex;
+  position: relative;
+  background: white;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.avatar .avatar-img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+
+.avatar.avatar-small {
+  width: 24px;
+  height: 24px;
+}
+
+.avatar.avatar-medium {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar.avatar-large {
+  width: 48px;
+  height: 48px;
+}
+
+.avatar.avatar-xlarge {
+  width: 96px;
+  height: 96px;
+}
+
+.avatar.avatar-xxlarge {
+  width: 128px;
+  height: 128px;
+}
