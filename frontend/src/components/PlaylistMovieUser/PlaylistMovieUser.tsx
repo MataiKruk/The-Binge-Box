@@ -54,7 +54,7 @@ function PlaylistMovieUser({playlist, onDelete}: PlaylistMovieUserProps) {
                         </li>
                     ))}
                     <div>
-                    <button onClick={() => onDelete(playlist._id ? playlist._id.toString() : 'default')}>Delete</button>
+                    <button className="glow-on-hover" onClick={() => onDelete(playlist._id ? playlist._id.toString() : 'default')}>Delete</button>
                 </div>
                 </ul>
             </li>

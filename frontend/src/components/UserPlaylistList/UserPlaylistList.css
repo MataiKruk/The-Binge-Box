@@ -1,0 +1,91 @@
+.user-playlist-list-h2 {
+    color: white;
+    margin-left: .5em;
+
+}
+
+.user-playlist-list-button-movie-randomizer {
+    display: flex;
+    flex-direction: column;
+    padding-right: 3em;
+}
+
+.user-playlist-list-button-div {
+    margin-left: 1em;
+        margin-right: 1em;
+        padding: .5em;
+        width: 100%;
+}
+
+.user-playlist-list-movie-randomizer {
+    margin-right: 0; 
+        margin-left: 1em;
+        margin-top: 1em;
+        padding: .5em;
+        width: 100%;
+}
+
+.user-playlist-list-button-div,
+.user-playlist-list-movie-randomizer {
+    background-color:rgb(72, 97, 123); 
+    border-radius: .5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    padding-right: 1em;
+}
+
+
+.user-playlist-list-button-div button,
+.user-playlist-list-movie-randomizer button {
+    white-space: nowrap;
+    background-color:rgb(72, 97, 123);
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: auto; 
+}
+
+
+.user-playlist-list-button-div svg {
+    margin: 0;
+    padding: 0;
+    width: 50px !important; 
+    height: 50px !important; 
+}
+
+.user-playlist-list-movie-randomizer svg {
+    margin: 0;
+    padding: 0;
+    width: 50px !important; 
+    height: 50px !important; 
+}
+
+
+.form-user-playlist-list {
+    padding: 0;
+    margin-right: 0;
+    margin-left: .3em;
+}
+
+.add-button-user-playlist-list {
+    flex-direction: row;
+}
+
+.add-button-user-playlist-list {
+    background: linear-gradient(to bottom, #82f4b1, #30c67c);
+    margin-right: 1.3em;
+}
+
+.cancel-button-user-playlist-list {
+    background: linear-gradient(to bottom, #82f4b1, #30c67c)
+}
+
+.playlist-form-input-user-playlist-list {
+    margin-top: 1em;
+    width: auto;
+    margin-right: 1em;
+}
+
+
+

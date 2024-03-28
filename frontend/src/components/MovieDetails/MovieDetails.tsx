@@ -141,7 +141,7 @@ const MovieDetails = () => {
           </NavLink>
 
           <form onSubmit={handleAddMovie}>
-            <select onChange={handlePlaylistChange}>
+            <select className="add-to-playlist-bar" onChange={handlePlaylistChange}>
               <option value={""}></option>
               {currentPlaylists.map((playlist, index) => (
                 <option key={index} value={String(playlist._id)}>

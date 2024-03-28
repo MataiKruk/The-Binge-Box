@@ -4,7 +4,7 @@ import UserPlaylistList from '../UserPlaylistList/UserPlaylistList';
 
 const UserProfile = () => {
     return (
-        <div>
+        <div className="user-profile-page-body">
         <p>USERPROFILE COMPONENT</p>
         <UserPlaylistList></UserPlaylistList>
         <StickyFooter></StickyFooter>
