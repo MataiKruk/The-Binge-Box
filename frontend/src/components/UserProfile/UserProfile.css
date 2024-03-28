@@ -1,6 +1,25 @@
+
 .user-profile-page-body {
     background: linear-gradient(to bottom, #34597a, #121212);
     padding-bottom: 10em;
     padding-top: 5em;
     width: 100%;
 }
+
+.user-profile-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.user-profile-username {
+  font-size: 1.75rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
