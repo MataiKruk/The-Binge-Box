@@ -1,20 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import Playlist from "../../models/Playlist";
 import { getPlaylistByID, updatePlaylist } from "../../services/playlistAPI";
 import { NavLink } from "react-router-dom";
 import StickyFooter from "../StickyFooter/StickyFooter";
 import "./UserPlaylist.css";
+import AuthContext from "../../context/AuthContext";
+import { useParams } from "react-router-dom";
 
 function UserPlaylist() {
   const posterUrl = "https://image.tmdb.org/t/p/w200";
   const [userPlaylist, setUserPlaylist] = useState<Playlist | null>(null);
   const [seenStatus, setSeenStatus] = useState<boolean[]>([]);
+  const { user } = useContext(AuthContext);
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    getPlaylistByID("6601d1df0db423fb6474403c").then((playlist) => {
+    if(user?.uid && id) {
+      getPlaylistByID(id).then((playlist) => {
       setUserPlaylist(playlist);
       setSeenStatus(new Array(playlist?.movies.length || 0).fill(false));
     });
+    }
+    
   }, []);
 
   const toggleSeenStatus = (index: number) => {
@@ -44,15 +51,17 @@ function UserPlaylist() {
         ...userPlaylist,
         movies: updatedMovies
       }
-     updatePlaylist(userPlaylist._id, updatedPlaylist);
+      if(userPlaylist._id) {
+        updatePlaylist(userPlaylist._id, updatedPlaylist);
      setUserPlaylist(updatedPlaylist);
+      }
     }
   }
 
   return (
     <>
       <div className="user-body">
-        <h1 className="user-playlist-name">My Playlist</h1>
+        <h1 className="user-playlist-name">{userPlaylist.playlist_name}</h1>
         <footer className="full-container-progress-bar">
         <h3 className="user-progress-bar-title">Track Your Progress!</h3>
         <div className="progress-container">
