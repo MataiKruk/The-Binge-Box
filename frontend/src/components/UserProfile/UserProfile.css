@@ -1,0 +1,16 @@
+.user-profile-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.user-profile-username {
+  font-size: 1.75rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}

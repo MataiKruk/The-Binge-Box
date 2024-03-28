@@ -39,18 +39,3 @@ p {
   font-size: 1.4rem;
   font-weight: bold;
 }
-
-.nav .avatar {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  background: white;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
-.nav .avatar img {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-}
