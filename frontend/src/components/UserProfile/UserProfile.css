@@ -2,7 +2,7 @@
 .user-profile-page-body {
     background: linear-gradient(to bottom, #34597a, #121212);
     padding-bottom: 10em;
-    padding-top: 5em;
+    padding-top: 2em;
     width: 100%;
 }
 
@@ -21,5 +21,6 @@
   text-align: center;
   margin: 0;
   padding: 0;
+  color: white;
 }
 

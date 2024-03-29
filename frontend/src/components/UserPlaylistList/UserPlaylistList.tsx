@@ -54,7 +54,7 @@ const UserPlaylistList = () => {
 
     return (
         <div>
-            <h2 className='user-playlist-list-h2'>Welcome. What would you like to do?</h2>
+            <h2 className='user-playlist-list-h2'>Welcome! What would you like to do?</h2>
             <div className='user-playlist-list-button-movie-randomizer'>
             <div className="user-playlist-list-button-div">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="playlist"><defs><linearGradient id="a" x1="12" x2="12" y1="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#82f4b1"></stop><stop offset="1" stop-color="#30c67c"></stop></linearGradient></defs><path fill="url(#a)" d="m8.05 12-1 .62v-1.24ZM22 5v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3Zm-3 12a1 1 0 0 0-1-1H6a1 1 0 0 0 0 2h12a1 1 0 0 0 1-1ZM5.53 15.27a1.05 1.05 0 0 0 .47.13.92.92 0 0 0 .51-.15l4-2.39a1 1 0 0 0 0-1.72l-4-2.39a1 1 0 0 0-1 0A1 1 0 0 0 5 9.6v4.8a1 1 0 0 0 .53.87ZM13 13h5a1 1 0 0 0 0-2h-5a1 1 0 1 0 0 2Zm6-6a1 1 0 0 0-1-1H6a1 1 0 0 0 0 2h12a1 1 0 0 0 1-1Z"></path></svg>
@@ -66,8 +66,8 @@ const UserPlaylistList = () => {
                 onChange={(e) => setNewPlaylistName(e.target.value)}
                 />
                 <div className='add-cancel-button-user-playlist-list'>
-                <button className="add-button-user-playlist-list" type='submit'>Add</button>
-                <button className="cancel-button-user-playlist-list" onClick={() => {setFormRevealed(false)}}>Cancel</button>
+                <button className="glow-on-user-playlist" type='submit'>Add</button>
+                <button className="glow-on-user-playlist" onClick={() => {setFormRevealed(false)}}>Cancel</button>
                 </div>
             </form>
             )}

@@ -22,13 +22,17 @@ function PlaylistMovieUser({playlist, onDelete}: PlaylistMovieUserProps) {
     if(playlist.user) {
       return (
       <>
+      
          <li className="playlist-playlist-container">
+         <div className="playlist-name-and-delete-playlist-movie-user">
          <h3>
           {/* NavLink the playlist routes! */}
           <NavLink to={`/playlists/${playlist._id}`} style={{ textDecoration: 'none', color: 'white'}}>
             {playlist.playlist_name}
           </NavLink>
         </h3>
+                    <button className="glow-on-delete" onClick={() => onDelete(playlist._id ? playlist._id.toString() : 'default')}>Delete</button>
+                </div>
                 <ul className="playlist-movie-container">
                     {playlist.movies.map((movie, index) => (
                         <li className="movie-container" key={index}>
@@ -53,9 +57,7 @@ function PlaylistMovieUser({playlist, onDelete}: PlaylistMovieUserProps) {
                             </div>
                         </li>
                     ))}
-                    <div>
-                    <button className="glow-on-hover" onClick={() => onDelete(playlist._id ? playlist._id.toString() : 'default')}>Delete</button>
-                </div>
+                  
                 </ul>
             </li>
       </>

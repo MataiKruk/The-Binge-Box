@@ -1,5 +1,6 @@
 body {
-  background: linear-gradient(to bottom, #d8dde3, #6d90b9);
+  background-color: #d8dde3;
+  background-size: 600px;
   /* padding-bottom: 10em; */
     font-family: "Wix Madefor Text", sans-serif;
     font-optical-sizing: auto;

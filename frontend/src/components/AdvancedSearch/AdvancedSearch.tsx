@@ -222,7 +222,7 @@ const AdvancedSearch = () => {
 
       {isSearching && !moviesReturned && (
         <div className="end-of-results">
-          {pageNumb === 1 ? <p>No results returned</p> : <p>End of Results</p>}
+          {pageNumb === 1 ? <p className="advanced-search-no-results">No results returned</p> : <p className="advanced-search-no-results">End of Results</p>}
         </div>
       )}
 

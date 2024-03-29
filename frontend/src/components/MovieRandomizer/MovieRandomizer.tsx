@@ -36,7 +36,7 @@ function MovieRandomizer() {
                     <div className="modal-content">
                         <div className="modal-content-title">
                         <span className="close" onClick={closeModal}>&times;</span>
-                        <h2>{randomMovie.title}</h2></div>
+                        <h2 className="movie-randomizer-h2">{randomMovie.title}</h2></div>
                         <div className="modal-content-img-p">
                         <div className="modal-content-img">
                         <NavLink to={`/movie/${randomMovie.id}`}>

@@ -23,7 +23,14 @@
 }
 
 .modal-content-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 
+}
+
+.movie-randomizer-h2 {
+    padding-top: .5em;
 }
 
 .modal-content-img-p {
@@ -34,14 +41,15 @@
 .modal-content-p {
     color: black;
     padding-left: .5em;
+    margin-top: 0;
 
 }
 
 /* The Close Button */
 .close {
     color: black;
-    position: absolute;
-    right: 17%;
+    /* position: fixed;
+    right: 300px; */
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;

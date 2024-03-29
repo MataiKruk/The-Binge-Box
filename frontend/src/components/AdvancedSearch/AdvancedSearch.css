@@ -121,3 +121,14 @@ label {
     align-items: center;
     padding-top: 0;
 }
+
+.advanced-search-no-results {
+    background-color: #1d1d1e;
+    width: 100%;
+    color: #fcc82d;
+    font-weight: bold;
+    font-size: large;
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+}
