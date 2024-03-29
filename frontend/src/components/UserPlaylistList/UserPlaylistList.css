@@ -72,14 +72,6 @@
     flex-direction: row;
 }
 
-.add-button-user-playlist-list {
-    background: linear-gradient(to bottom, #82f4b1, #30c67c);
-    margin-right: 1.3em;
-}
-
-.cancel-button-user-playlist-list {
-    background: linear-gradient(to bottom, #82f4b1, #30c67c)
-}
 
 .playlist-form-input-user-playlist-list {
     margin-top: 1em;
@@ -87,5 +79,69 @@
     margin-right: 1em;
 }
 
+.glow-on-user-playlist {
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #767676;
+    font-size: small;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    margin-top: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    z-index: 0;
+    border-radius: 10px;
+}
 
+.glow-on-user-playlist:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-user-playlist:active {
+    color: #000
+}
+
+.glow-on-user-playlist:active:after {
+    background: transparent;
+}
+
+.glow-on-user-playlist:hover:before {
+    opacity: 1;
+}
+
+.glow-on-user-playlist:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1d1d1e;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
 

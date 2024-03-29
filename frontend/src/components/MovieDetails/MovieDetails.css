@@ -1,3 +1,9 @@
+.movie-details-body {
+  padding-bottom: 10em;
+  background: linear-gradient(to bottom, #35587a, #14171a);
+  padding-top: 2em;
+}
+
 .mainContainer {
     display: flex;
   }
@@ -123,29 +129,32 @@
 }
 
 .success-message-container {
-  background-color: green;
+  background: linear-gradient(to bottom, #6eee87, #5fc52e);
   display: flex;
   justify-content: center;
   width: 80%;
   align-items: center;
   margin: auto;
   padding: 20px;
-  border: #1d1d1e solid 2px;
   border-radius: .5em;
+  font-weight: bold;
   color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.533);
+  margin-bottom: 2em;
 }
 
 .error-message-container {
-  background-color: red;
+  background: linear-gradient(to bottom, #fd4b2f, #e01f2d);
   display: flex;
   justify-content: center;
   width: 80%;
   align-items: center;
   margin: auto;
   padding: 20px;
-  border: #1d1d1e solid 2px;
   border-radius: .5em;
   color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.533);
 }
 
 .add-to-playlist-bar {

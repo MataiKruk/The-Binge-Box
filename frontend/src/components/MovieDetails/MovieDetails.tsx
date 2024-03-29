@@ -105,6 +105,7 @@ const MovieDetails = () => {
 
   return (
     <>
+    <div className="movie-details-body">
       <div className="movieDetailsContainer">
         <div className="mainContainer">
           <div className="imgContainer">
@@ -166,7 +167,7 @@ const MovieDetails = () => {
           <div className="error-message">Error: Please Select a Playlist.</div>
         </div>
       )}
-
+  </div>
       <StickyFooter />
     </>
   );

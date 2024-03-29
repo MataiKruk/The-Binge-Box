@@ -8,7 +8,7 @@ const UserProfile = () => {
   const user = useUser();
 
   return (
-    <div>
+    <div className="user-profile-page-body">
       <div className="user-profile-header">
         <Avatar
           size="xxlarge"
