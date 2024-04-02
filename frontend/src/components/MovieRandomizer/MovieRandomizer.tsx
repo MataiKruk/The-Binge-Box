@@ -30,7 +30,7 @@ function MovieRandomizer() {
 
     return (
         <div>
-            <button onClick={handleRandomize}>Randomize Movie</button>
+            <button onClick={handleRandomize}>Click Here For a Random Movie!!</button>
             {modalOpen && randomMovie && (
                 <div className="modal">
                     <div className="modal-content">
