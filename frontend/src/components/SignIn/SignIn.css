@@ -39,6 +39,11 @@
   border: 2px solid black;
 }
 
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
 .signup-btn {
   background-color: #d8dde4;
   color: rgb(0, 0, 0);
@@ -77,7 +82,11 @@
 .sign-in-form {
   display: grid;
   gap: 1rem;
-  max-width: 300px;
+  max-width: 500px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .sign-in-form p.form-error {
