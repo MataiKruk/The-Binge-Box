@@ -44,7 +44,7 @@ function MataiPlaylist() {
         <footer className="full-container-progress-bar">
         <h3 className="matai-progress-bar-title">Track Your Progress!</h3>
         <div className="progress-container">
-        <div className="progress-bar" style={progressBarStyle}></div>
+        <div className="progress-bar" style={progressBarStyle}>{`${percentSeen}%`}</div>
         </div>
         </footer>
         <div>

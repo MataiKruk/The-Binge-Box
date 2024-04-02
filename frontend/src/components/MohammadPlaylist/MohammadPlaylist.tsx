@@ -40,11 +40,11 @@ function MohammadPlaylist() {
   return (
     <>
       <div className="mohammad-body">
-        <h1 className="mohammad-playlist-name">Mohammad's All-Time Favorites!</h1>
+        <h1 className="mohammad-playlist-name">{`Track Your Progress! ${percentSeen}%`}</h1>
         <footer className="mohammad-full-container-progress-bar">
         <h3 className="mohammad-progress-bar-title">Track Your Progress!</h3>
         <div className="mohammad-progress-container">
-        <div className="mohammad-progress-bar" style={progressBarStyle}></div>
+        <div className="mohammad-progress-bar" style={progressBarStyle}>{`${percentSeen}%`}</div>
         </div>
         </footer>
         <div>

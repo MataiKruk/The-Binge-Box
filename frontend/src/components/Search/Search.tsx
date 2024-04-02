@@ -60,12 +60,12 @@ const Search = () => {
         <div className="searchBox">
           <input
             type="text"
-            placeholder="Search for a Movie"
+            placeholder="Search for a Movie..."
             value={searchQuery}
             name="search"
             onChange={(e) => setSearchQuery(e.target.value)}
           ></input>
-          <button className="glow-on-hover" type="submit">Submit</button>
+          <button className="glow-on-hover" type="submit">Search</button>
         </div>
       </form>
 
