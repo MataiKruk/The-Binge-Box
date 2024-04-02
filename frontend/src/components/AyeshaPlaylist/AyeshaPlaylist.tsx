@@ -42,9 +42,9 @@ function AyeshaPlaylist() {
       <div className="ayesha-body">
         <h1 className="ayesha-playlist-name">Ayesha's Ghibli Picks!</h1>
         <footer className="ayesha-full-container-progress-bar">
-        <h3 className="ayesha-progress-bar-title">Track Your Progress!</h3>
+        <h3 className="ayesha-progress-bar-title">Track Your Progress! </h3>
         <div className="ayesha-progress-container">
-        <div className="ayesha-progress-bar" style={progressBarStyle}></div>
+        <div className="ayesha-progress-bar" style={progressBarStyle}>{`${percentSeen}%`}</div>
         </div>
         </footer>
         <div>

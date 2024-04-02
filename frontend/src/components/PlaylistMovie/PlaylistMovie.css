@@ -16,6 +16,7 @@ h3 {
     overflow: scroll;
     /* height: 400px; */
     scrollbar-color: #606060 #393939;
+    padding-top: .5em;
 }
 
 .movie-container {
@@ -23,6 +24,7 @@ h3 {
     padding: 1em;
     margin-left: .5em;
     border-radius: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     transition: transform 0.2s ease-in-out;
 }
 
@@ -52,5 +54,8 @@ h3 {
     background-color: #181818;
     color: #3da2e1;
     border: none;
+    font-size: small;
+    margin: 0;
+    padding: 0;
 
 }

@@ -27,6 +27,13 @@ export interface Filters {
     sort_by?: string
 }
 
+export interface Filters {
+    with_genres?: string,
+    'primary_release_date.gte'?: string,
+    'primary_release_date.lte'?: string,
+    sort_by?: string
+}
+
 const getPopularMovies = async (page: number = 1) : Promise<Movie[]> => {
     const response = await axios.get<ApiResponse>(`${baseUrl}/discover/movie`, {params: {
         api_key: apiKey,
@@ -78,6 +85,7 @@ const getActorByName = async (name : string) : Promise<Actor[]> => {
     
     return response.data.results;
 }
+
 //https://api.themoviedb.org/3/movie/693134?api_key=42b418da90228e8d910f126d604c78fc
 
-export { getPopularMovies, getMoviesBySearch, getMovieById, getMoviesByFilters, getActorByName };
+export { getPopularMovies, getMoviesBySearch, getMovieById, getMoviesByFilters, getActorByName};

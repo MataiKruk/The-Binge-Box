@@ -60,15 +60,16 @@ const Search = () => {
         <div className="searchBox">
           <input
             type="text"
-            placeholder="Search for a Movie"
+            placeholder="Search for a Movie..."
             value={searchQuery}
             name="search"
             onChange={(e) => setSearchQuery(e.target.value)}
           ></input>
-          <button className="glow-on-hover" type="submit">Submit</button>
+          <button className="glow-on-hover" type="submit">Search</button>
         </div>
       </form>
 
+      <h2 className="popular-movies-title">Popular Movies:</h2>
       <div className="pageInfo">
         <button className="arrow-icon" onClick={handlePrevPage} disabled={pageNumb < 2 ? true : false}>
         <FontAwesomeIcon icon={faArrowLeft} />
@@ -81,7 +82,6 @@ const Search = () => {
 
       {!isSearching && (
         <div className="popularMoviesContainer">
-          <h2 className="popular-movies-title">Popular Movies:</h2>
           <div className="movieCoversContainer">
             {popularMovies.map((movie) => (
               <div key={movie.id} className="popularMovie">

@@ -1,5 +1,6 @@
 import axios from "axios";
 import Playlist from "../models/Playlist";
+import { ObjectId } from "mongodb";
 
 const baseUrl: string = import.meta.env.VITE_API_URL || "";
 const playlistsEndpoint = 'playlists';
@@ -9,7 +10,6 @@ const apiUrl = "https://us-central1-the-binge-box.cloudfunctions.net/api/playlis
 const getAllPlaylists = async (): Promise<Playlist[]> => {
     const response = await axios.get<Playlist[]>(apiUrl);
 
-    console.log(response.data)
     return response.data;
 };
 
@@ -19,8 +19,8 @@ const getPlaylistByID = async (id: string): Promise<Playlist> => {
     return response.data;
 };
 
-const updatePlaylist = (id: string, playlist: Playlist) => {
-    return axios.put(fullUrl + id, playlist);
+const updatePlaylist = (id: ObjectId, playlist: Playlist) => {
+    return axios.put(`${fullUrl}/${id}`, playlist);
 };
 
 const addPlaylist = (playlist: Playlist) => {
@@ -28,7 +28,7 @@ const addPlaylist = (playlist: Playlist) => {
 };
 
 const deletePlaylist = (id: string) => {
-    return axios.delete(fullUrl + id);
+    return axios.delete(`${fullUrl}/${id}`);
 };
 
 const getMataiPlaylist = async (id: string) => {
@@ -43,8 +43,12 @@ const getMohammadPlaylist = async (id: string) => {
 
 const getAyeshaPlaylist = async (id: string) : Promise<Playlist> => {
     const ayeshaData = await axios.get<Playlist>(`${fullUrl}/${id}`);
-    console.log(ayeshaData.data)
     return ayeshaData.data;
 };
 
-export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist, getMataiPlaylist, getMohammadPlaylist, getAyeshaPlaylist, getPlaylistByID };
+const getPlaylistsByUser = async (user: string) : Promise<Playlist[]> => {
+    const response = await axios.get<Playlist[]>(`${fullUrl}/user/${user}`);
+    return response.data;
+};
+
+export { getAllPlaylists, updatePlaylist, addPlaylist, deletePlaylist, getMataiPlaylist, getMohammadPlaylist, getAyeshaPlaylist, getPlaylistByID, getPlaylistsByUser };

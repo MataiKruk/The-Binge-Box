@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useAuth, useUser } from "../../context/AuthContext";
 import "./Header.css";
+import { Link } from "react-router-dom";
+import { Avatar } from "../Avatar/Avatar";
 
 const Header = () => {
   const user = useUser();
@@ -8,7 +10,9 @@ const Header = () => {
 
   return (
     <div className="nav">
-      <p className="nav-logo">The Binge Box</p>
+      <Link to="/home">
+        <p className="nav-logo">The Binge Box</p>
+      </Link>
 
       <div className="nav-right">
         {user ? (
@@ -19,11 +23,10 @@ const Header = () => {
               Logout
             </a>
 
-            {user?.photoURL && (
-              <div className="avatar">
-                <img src={user.photoURL} alt={user?.displayName ?? "Avatar"} />
-              </div>
-            )}
+            <Avatar
+              src={user?.photoURL ?? undefined}
+              alt={user?.displayName ?? undefined}
+            />
           </>
         ) : (
           <NavLink to="/sign-in">Login</NavLink>

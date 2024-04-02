@@ -1,37 +1,38 @@
 import { NavLink } from "react-router-dom";
 import Playlist from "../../models/Playlist";
-import "./PlaylistMovie.css"
+import "./PlaylistMovieUser.css"
 import { useState } from "react";
 
-interface PlaylistMovieProps {
+interface PlaylistMovieUserProps {
     playlist: Playlist;
+    onDelete: (playlistId: string) => void;
 }
 
-function PlaylistMovie({playlist}: PlaylistMovieProps) {
+function PlaylistMovieUser({playlist, onDelete}: PlaylistMovieUserProps) {
     const posterUrl = "https://image.tmdb.org/t/p/w200"
 
     const [showFullOverview, setShowFullOverview] = useState<boolean>(false);
+
 
     // Function to toggle visibility of full overview
     const toggleOverview = () => {
       setShowFullOverview(!showFullOverview);
     };
-  
-    // Function to generate the playlist route so I don't have to hardcode them into app.tsx
-  const getPlaylistRoute = (playlistName: string) => {
-    return `/${playlistName.toLowerCase().replace(/\s+/g, '-')}-playlist`;
-  };
 
-    if(!playlist.user) {
+    if(playlist.user) {
       return (
       <>
+      
          <li className="playlist-playlist-container">
+         <div className="playlist-name-and-delete-playlist-movie-user">
          <h3>
           {/* NavLink the playlist routes! */}
-          <NavLink to={getPlaylistRoute(playlist.playlist_name)} style={{ textDecoration: 'none', color: 'white'}}>
+          <NavLink to={`/playlists/${playlist._id}`} style={{ textDecoration: 'none', color: 'white'}}>
             {playlist.playlist_name}
           </NavLink>
         </h3>
+                    <button className="glow-on-delete" onClick={() => onDelete(playlist._id ? playlist._id.toString() : 'default')}>Delete</button>
+                </div>
                 <ul className="playlist-movie-container">
                     {playlist.movies.map((movie, index) => (
                         <li className="movie-container" key={index}>
@@ -56,6 +57,7 @@ function PlaylistMovie({playlist}: PlaylistMovieProps) {
                             </div>
                         </li>
                     ))}
+                  
                 </ul>
             </li>
       </>
@@ -64,4 +66,4 @@ function PlaylistMovie({playlist}: PlaylistMovieProps) {
     
   }
   
-  export default PlaylistMovie;
+  export default PlaylistMovieUser;

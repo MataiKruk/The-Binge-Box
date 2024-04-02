@@ -1,0 +1,56 @@
+/* The Modal (background) */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px; /* Adjust the max-width as needed */
+    border-radius: 1em;
+}
+
+.modal-content-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+}
+
+.movie-randomizer-h2 {
+    padding-top: .5em;
+}
+
+.modal-content-img-p {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-content-p {
+    color: black;
+    padding-left: .5em;
+    margin-top: 0;
+
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    /* position: fixed;
+    right: 300px; */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
