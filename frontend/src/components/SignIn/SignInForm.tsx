@@ -30,11 +30,13 @@ export default function SignInForm(props: SignInFormProps) {
 
   return (
     <div className="form-container">
-      {" "}
       <form className="sign-in-form" onSubmit={handleSubmit} {...props}>
         {error && <p className="form-error">{error}</p>}
-        <input name="username" placeholder="Email" required />
+        <label htmlFor="username">Email</label>
+        <input id="username" name="username" placeholder="Email" required />
+        <label htmlFor="password">Password</label>
         <input
+          id="password"
           type="password"
           name="password"
           placeholder="Password"

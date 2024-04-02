@@ -4,7 +4,7 @@ import { auth } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
 export interface AuthContextModel {
-  user: User | null; // null when not logged in
+  user: User | null; 
 }
 
 const defaultValue: AuthContextModel = {

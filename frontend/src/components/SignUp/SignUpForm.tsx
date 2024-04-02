@@ -36,7 +36,9 @@ export default function SignUpForm(props: SignUpFormProps) {
     <div className="form-container">
       <form className="sign-up-form" onSubmit={handleSubmit} {...props}>
         {error && <p className="form-error">{error}</p>}
+        <label htmlFor="username">Email</label>
         <input name="username" placeholder="Email" required />
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           name="password"
