@@ -127,7 +127,7 @@ function UserPlaylist() {
                     </svg>
                   )}
                 </div>
-                <button onClick={() => {handleRemoveMovie(movie.id)}}>Remove</button>
+                <button className="glow-on-user-playlist" onClick={() => {handleRemoveMovie(movie.id)}}>Remove</button>
                 <p className="user-movie-overview">{movie.overview}</p>
               </div>
             </div>
