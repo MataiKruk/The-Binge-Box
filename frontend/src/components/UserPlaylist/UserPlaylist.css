@@ -1,9 +1,8 @@
 .user-body {
-    /* background-color: #121212; */
-    background-image: url(mataibackground.jpeg);
-    background-repeat: repeat;
-    background-size: 800px;
-    padding-bottom: 7em;
+  background: linear-gradient(to bottom, #34597a, #121212);
+  padding-bottom: 10em;
+  padding-top: 2em;
+  width: 100%;
 }
 
 .user-playlist-name {
@@ -14,13 +13,13 @@
 }
 
 .user-movie-title {
-    color: #036c41;
+    color: white;
     margin: 0;
     display: inline;
 }
 
 .user-movie-overview {
-    color: rgb(103, 126, 115);
+    color: white;
     margin-top: .5em;
 }
 
@@ -30,7 +29,7 @@
 
 .user-movie-container-parent {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.915);
+    background-color: #111111;
     margin-top: 1em;
     margin-bottom: 2em;
     margin-left: 2em;
